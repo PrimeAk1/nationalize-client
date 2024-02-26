@@ -2,11 +2,19 @@ package nationalize;
 
 import com.google.gson.annotations.SerializedName;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.util.List;
 public class Nationality {
 
     private long count;
     private String name;
+
+    @Override
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+    }
 
     @SerializedName("country")
     private List<Country> countries;
