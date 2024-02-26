@@ -51,6 +51,11 @@ public class Nationality {
 
     public static class Country {
 
+        @Override
+        public String toString() {
+            return ReflectionToStringBuilder.toString(this, ToStringStyle.NO_CLASS_NAME_STYLE);
+        }
+
         private String countryId;
         private float probability;
 
